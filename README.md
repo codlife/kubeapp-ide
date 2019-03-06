@@ -70,13 +70,34 @@ kubectl create -f https://github.com/kubesys/kube-dataAnalysis/blob/master/jupyt
 Execute the command
 
 ```
-kubectl get svc -n jhub | grep hub
+kubectl describe service proxy-public --namespace jhub
 ```
 
 Then can see the following outputs:
 
 ```
-hub            ClusterIP      10.109.54.72     <none>        8081/TCP                     21m
+Name:                     proxy-public
+Namespace:                jhub
+Labels:                   app=jupyterhub
+                          chart=jupyterhub-0.8.0
+                          component=proxy-public
+                          heritage=Tiller
+                          release=jhub
+Annotations:              <none>
+Selector:                 component=proxy,release=jhub
+Type:                     LoadBalancer
+IP:                       10.111.253.110
+Port:                     http  80/TCP
+TargetPort:               8000/TCP
+NodePort:                 http  31589/TCP
+Endpoints:                192.168.66.248:8000
+Port:                     https  443/TCP
+TargetPort:               443/TCP
+NodePort:                 https  31890/TCP
+Endpoints:                192.168.66.248:443
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
 ```
 
-Now you can use hub at http://10.109.54.72:8081 (admin/admin)
+Now you can use hub at http://192.168.66.248:8000 (admin/admin)
