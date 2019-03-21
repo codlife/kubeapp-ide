@@ -101,3 +101,5 @@ Events:                   <none>
 ```
 
 Now you can use hub at http://192.168.66.248:8000 (admin/admin)
+
+** Note that if you encouner a permission error, please check your disk permissoins **
