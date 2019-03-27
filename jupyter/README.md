@@ -107,5 +107,5 @@ Now you can use hub at http://192.168.66.248:8000 (admin/admin)
 ## BTW: create user
 
 ```
-curl -H "Content-Type: application/json" -X POST  http://133.133.134.139:31841/users/test
+curl -X POST "http://10.109.54.72:8081/hub/api/users/henry" -H  "accept: application/json"
 ```
